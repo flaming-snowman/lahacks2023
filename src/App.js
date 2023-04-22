@@ -1,5 +1,10 @@
+import "./App.css";
 function DuckButton({}) {
-  return <button>DUCK</button>;
+  return (
+    <div id="duck-btn">
+      <button class="btn">sksksk</button>
+    </div>
+  );
 }
 function GooseButton({}) {
   return <button>GOOSE</button>;

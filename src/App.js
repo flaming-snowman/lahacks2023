@@ -1,12 +1,16 @@
-import duck from './img/transduck.png';
+import duck from './img/duck.png';
 import { useState } from 'react';
 import './App.css'
 
 function ImageButton(props) {
   return (
-    <button onClick={props.onClick}>
-      <img src={props.imageSrc} alt={props.imageAlt} title={props.imageAlt} style={{ background: 'transparent' }} />
-    </button>
+    <img
+        width={300}
+        height={300}
+        src={props.imageSrc}
+        title={props.imageTitle}
+        onClick={props.onClick}
+    />
   );
 }
 
@@ -17,11 +21,13 @@ function DuckButton({}) {
         setCount(count+1);
     }
 
-    return (<ImageButton
-        imageSrc={duck}
-        imageAlt={count}
-        onClick={gotClicked}
-    />);
+    return (<><ImageButton
+                imageSrc={duck}
+                imageTitle={count}
+                onClick={gotClicked}
+            />
+            <h1>You clicked the duck {count} times</h1></>
+    );
 }
 function GooseButton({}) {
   return <button>GOOSE</button>;

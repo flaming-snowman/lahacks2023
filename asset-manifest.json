@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/lahacks2023/static/css/main.ccc3e92e.css",
-    "main.js": "/lahacks2023/static/js/main.8b0a907f.js",
+    "main.css": "/lahacks2023/static/css/main.cc77ec3a.css",
+    "main.js": "/lahacks2023/static/js/main.f333d9fe.js",
     "static/js/787.9658bf03.chunk.js": "/lahacks2023/static/js/787.9658bf03.chunk.js",
+    "static/media/splash.png": "/lahacks2023/static/media/splash.7d8787f7cd1e6d827bde.png",
     "static/media/duck.png": "/lahacks2023/static/media/duck.30d88b61cda48266e518.png",
     "static/media/goose.png": "/lahacks2023/static/media/goose.9872cfce45b78b5f61c3.png",
     "static/media/egg.png": "/lahacks2023/static/media/egg.f07b3df2c000124a3a6f.png",
     "index.html": "/lahacks2023/index.html",
-    "main.ccc3e92e.css.map": "/lahacks2023/static/css/main.ccc3e92e.css.map",
-    "main.8b0a907f.js.map": "/lahacks2023/static/js/main.8b0a907f.js.map",
+    "main.cc77ec3a.css.map": "/lahacks2023/static/css/main.cc77ec3a.css.map",
+    "main.f333d9fe.js.map": "/lahacks2023/static/js/main.f333d9fe.js.map",
     "787.9658bf03.chunk.js.map": "/lahacks2023/static/js/787.9658bf03.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ccc3e92e.css",
-    "static/js/main.8b0a907f.js"
+    "static/css/main.cc77ec3a.css",
+    "static/js/main.f333d9fe.js"
   ]
 }

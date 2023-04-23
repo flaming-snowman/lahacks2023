@@ -1,6 +1,6 @@
 import duck from './img/duck.png';
 import goose from './img/goose.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css'
 
 function ImageButton(props) {
@@ -16,10 +16,11 @@ function ImageButton(props) {
 }
 
 
-function CounterButton({src, text}) {
+function CounterButton({src, text, updateKarma, add}) {
     const [count, setCount] = useState(0);
     function gotClicked() {
         setCount(count+1);
+        updateKarma(add);
     }
 
     return (<><ImageButton
@@ -31,19 +32,25 @@ function CounterButton({src, text}) {
     );
 }
 
-function DuckButton({}) {
-    return <CounterButton src={duck} text="duck"/>;
+function DuckButton({func}) {
+    return <CounterButton src={duck} updateKarma={func} add={1} text="duck"/>;
 }
 
-function GooseButton({}) {
-    return <CounterButton src={goose} text="goose"/>;
+function GooseButton({func}) {
+    return <CounterButton src={goose} updateKarma={func} add={-1} text="goose"/>;
 }
 
 export default function Board() {
+    const [karma, setKarma] = useState(0);
+    function updateKarma(add) {
+        setKarma(karma+add);
+        if(karma+add < 0) setKarma(0);
+    }
   return (
     <>
-      <DuckButton />
-      <GooseButton />
+        <h1>Karma: {karma}</h1>
+      <DuckButton func={updateKarma}/>
+      <GooseButton func={updateKarma}/>
     </>
   );
 }

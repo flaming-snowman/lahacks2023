@@ -9,10 +9,13 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .wobble {
-    animation: App-logo-spin infinite 0.2s alternate-reverse ease-in-out;
+    animation: App-logo-spin infinite 0.2s alternate ease-in-out;
   }
 }
 
+  .wobble:hover {
+    transform: zoom(150%);
+  }
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -48,4 +51,18 @@
 }
 #goose:hover {
     background: lightpink
+}
+
+.splash {
+    position: relative;
+    text-align: center;
+}
+
+.splash h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    font-weight: bold;
+    font-size: 5rem;
+    transform: translate(-50%, -50%);
 }

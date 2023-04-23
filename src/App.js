@@ -1,6 +1,7 @@
 import duck from "./img/duck.png";
 import goose from "./img/goose.png";
-import egg from "./img/egg.png"
+import egg from "./img/egg.png";
+import splash from "./img/splash.png"
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import ProgressBar from "react-bootstrap/ProgressBar";
@@ -14,7 +15,6 @@ function ImageButton(props) {
             src={props.imageSrc}
             title={props.imageTitle}
             onClick={props.onClick}
-            alt="bird"
         />
     );
 }
@@ -55,14 +55,15 @@ function GooseButton({ func }) {
     );
 }
 
-function Egg({karma}) {
+function Egg({karma, func}) {
     if(karma==20) {
-        return <img src={egg} class="wobble" style={{ display: "block", margin: "0 auto 50px" }} />;
+        return <img src={egg} class="wobble" style={{ display: "block", margin: "0 auto 50px" }} onClick={func}/>;
+
     }
     return <img src={egg} style={{ display: "block", margin: "0 auto 50px" }} />;
 }
 
-export default function Board() {
+function Board({func}) {
     const [karma, setKarma] = useState(0);
     function updateKarma(add) {
         setKarma(karma + add);
@@ -74,12 +75,30 @@ export default function Board() {
             <div style={{ padding: "20px" }}>
                 <ProgressBar now={karma * 5} />
             </div>
-            <h1>Karma: {karma}</h1>
-            <Egg karma={karma}/>
+            <h1 style={{marginLeft: "20px"}}>Karma: {karma} </h1>
+            <Egg karma={karma} func={func}/>
             <div style={{ display: "flex", justifyContent: "space-evenly" }}>
                 <DuckButton func={updateKarma} />
                 <GooseButton func={updateKarma} />
             </div>
         </>
     );
+}
+
+function Splash({ func }) {
+    return (
+                <div className = "splash">
+                    <img src={splash} style={{width: "100%"}} onClick={func}/>
+                    <h1> Duck Duck Goose </h1>
+                </div>
+           )
+    return }
+
+export default function App() {
+    const [board, setBoard] = useState(0);
+    function switchBoard() {
+        setBoard(1-board);
+    }
+    if(board == 0) return <Splash func={switchBoard}/>;
+    else return <Board func={switchBoard}/>;
 }
